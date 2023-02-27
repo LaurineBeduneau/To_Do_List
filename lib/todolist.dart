@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Todoui extends StatefulWidget {
-  Todoui({super.key});
+class TodoList extends StatefulWidget {
+  TodoList({super.key});
   final TextEditingController todo = TextEditingController();
   @override
-  TodouiState createState() => TodouiState();
+  TodoListState createState() => TodoListState();
 }
 
-class TodouiState extends State<Todoui> {
+class TodoListState extends State<TodoList> {
   @override
   void initState() {
     // TODO: implement initState
@@ -69,6 +69,8 @@ class TodouiState extends State<Todoui> {
       ),
     );
   }
+
+  void deleteTask() {}
 
   Widget mycard(String task) {
     return Card(
