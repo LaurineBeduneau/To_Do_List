@@ -1,4 +1,4 @@
-import 'package:app/todoui.dart';
+import 'package:app/todolist.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyAppState extends State<MyApp> {
       title: "TODOLIST",
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(primaryColor: Colors.yellow),
-      home: Todoui(),
+      home: TodoList(),
     );
   }
 }
