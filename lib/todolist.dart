@@ -51,6 +51,8 @@ class TodoListState extends State<TodoList> {
                   ElevatedButton(
                     onPressed: () {
                       cards.add(mycard(todo!.text.toString()));
+                      todo.clear();
+                      Navigator.pop(context);
                       setState(() {});
                     },
                     child: const Text(
@@ -123,6 +125,13 @@ class TodoListState extends State<TodoList> {
         backgroundColor: Colors.black,
         body: ListView.builder(
             itemCount: cards.length,
-            itemBuilder: ((context, index) => cards[index])));
+            itemBuilder: ((context, index) => Dismissible(
+                key: Key(index.toString()),
+                direction: DismissDirection.horizontal,
+                onDismissed: (_) {
+                  cards.removeAt(index);
+                  setState(() {});
+                },
+                child: cards[index]))));
   }
 }
